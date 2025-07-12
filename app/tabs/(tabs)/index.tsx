@@ -30,7 +30,7 @@ export default function Home() {
         </Card>
       </View>
       <View className="flex-row justify-between items-center gap-4">
-        <Link href="/tabs/tap" asChild>
+        <Link href="/tap" asChild>
           <TouchableOpacity>
             <Card className="flex-1  flex-col justify-center items-center gap-2">
               <Feather name="arrow-up" size={24} color="white" />
