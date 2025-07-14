@@ -24,7 +24,7 @@ export default function Home() {
         </TouchableOpacity>
       </Card>
       <View>
-        <Text className="text-xl mt-6 mb-2">Nearby Devices</Text>
+        <Text className="text-xl mt-6 mb-2">Nearby Wallets</Text>
         <Card className="rounded-2xl">
           <TouchableOpacity className="flex-row items-center justify-between px-2 py-1">
             <View>
@@ -32,6 +32,9 @@ export default function Home() {
             </View>
             <Feather name="chevron-right" size={24} color="white" />
           </TouchableOpacity>
+          <Text className="text-zinc-400 text-sm px-2 py-1">
+            Tap to connect with a nearby wallet via NFC.
+          </Text>
         </Card>
       </View>
       <View className="flex-row justify-between items-center gap-4">
