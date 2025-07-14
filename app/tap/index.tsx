@@ -22,7 +22,7 @@ export default function Send() {
       <TouchableOpacity
         className="bg-purple-600 p-4 rounded-2xl items-center"
         onPress={() =>
-          router.push({ pathname: "/tabs/tap/send", params: { amount } })
+          router.push({ pathname: "/tap/send", params: { amount } })
         }
       >
         <Text className="text-white text-lg font-semibold">Tap to Pay</Text>
