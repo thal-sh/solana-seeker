@@ -1,5 +1,6 @@
 import { TouchableOpacity } from "react-native";
 import { Text } from "@/components/ui/text";
+import React from "react";
 
 interface CardButtonProps {
   icon: React.ReactNode;
@@ -8,19 +9,22 @@ interface CardButtonProps {
   className?: string; // optional extra styling
 }
 
-export function CardButton({
-  icon,
-  label,
-  onPress,
-  className = "",
-}: CardButtonProps) {
+const CardButton = React.forwardRef<
+  React.ElementRef<typeof TouchableOpacity>,
+  CardButtonProps
+>(({ icon, label, className, ...props }, ref) => {
   return (
     <TouchableOpacity
-      onPress={onPress}
-      className={`flex-1 flex-col justify-center items-center gap-2 bg-background-0 p-4 rounded-2xl ${className}`}
+      ref={ref}
+      className={`flex-1 flex-col justify-center items-center gap-2 bg-background-0 p-4 rounded-md ${className}`}
+      {...props}
     >
       {icon}
-      <Text className="text-center text-sm">{label}</Text>
+      <Text className="text-center text-sm text-white">{label}</Text>
     </TouchableOpacity>
   );
-}
+});
+
+CardButton.displayName = "ActionCardButton";
+
+export { CardButton };
