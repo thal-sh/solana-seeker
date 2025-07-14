@@ -1,19 +1,24 @@
 import React from "react";
-import Gradient from "@/assets/Icons/Gradient";
-import DocumentData from "@/assets/Icons/DocumentData";
-import LightBulbPerson from "@/assets/Icons/LightbulbPerson";
-import Rocket from "@/assets/Icons/Rocket";
-import Logo from "@/assets/Icons/Logo";
+import { TouchableOpacity, View } from "react-native";
 import { Box } from "@/components/ui/box";
-import { ScrollView } from "react-native";
 import { Text } from "@/components/ui/text";
-
 import { Link } from "expo-router";
+import { Center } from "@/components/ui/center";
 
 export default function Home() {
   return (
-    <Box className="flex-1 bg-black h-[100vh]">
-      <Link href="/tabs/(tabs)">tabs</Link>
-    </Box>
+    <View className="flex-1 bg-black">
+      <Center className="flex-1 justify-center items-center gap-4">
+        <Text className="text-white text-2xl font-semibold">
+          Connect your Wallet
+        </Text>
+
+        <Link href="/tabs/(tabs)" asChild>
+          <TouchableOpacity className="bg-white px-6 py-3 rounded-xl">
+            <Text className="text-black font-medium">Connect Wallet</Text>
+          </TouchableOpacity>
+        </Link>
+      </Center>
+    </View>
   );
 }
